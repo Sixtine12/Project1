@@ -13,8 +13,8 @@ public class Licorne {
     private String race;
     private String robe;
     private int age;
-    private byte sexe;
-    private byte vendu;
+    private int sexe;
+    private int vendu;
     private String photo;
 
     @Id
@@ -69,21 +69,21 @@ public class Licorne {
 
     @Basic
     @Column(name = "Sexe")
-    public byte getSexe() {
+    public int getSexe() {
         return sexe;
     }
 
-    public void setSexe(byte sexe) {
+    public void setSexe(int sexe) {
         this.sexe = sexe;
     }
 
     @Basic
     @Column(name = "Vendu")
-    public byte getVendu() {
+    public int getVendu() {
         return vendu;
     }
 
-    public void setVendu(byte vendu) {
+    public void setVendu(int vendu) {
         this.vendu = vendu;
     }
 
