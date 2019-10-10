@@ -8,11 +8,11 @@ import javax.persistence.Query;
 import java.util.List;
 
 @Stateless
-public class PersonneDao {
-    public List<Personne> findAll(){
+public class LicorneDao {
+    public List<Licorne> findAll(){
         EntityManagerFactory f = Persistence.createEntityManagerFactory("NewPersistenceUnit");
         EntityManager em = f.createEntityManager();
-        Query requete = em.createQuery("select p from Personne p");
+        Query requete = em.createQuery("select p from Licorne p");
         return requete.getResultList();
     }
 }

@@ -4,11 +4,14 @@
     <persistence-unit name="NewPersistenceUnit">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <class>AutoGenerate.Personne</class>
+        <class>AutoGenerate.Licorne</class>
+        <class>AutoGenerate.Transaction</class>
+        <class>AutoGenerate.Utilisateur</class>
         <properties>
-            <property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/test?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
+            <property name="eclipselink.jdbc.url" value="jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7307966"/>
             <property name="eclipselink.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="eclipselink.jdbc.user" value="root"/>
-            <property name="eclipselink.jdbc.password" value=""/>
+            <property name="eclipselink.jdbc.user" value="sql7307966"/>
+            <property name="eclipselink.jdbc.password" value="3Fhwh42qXz"/>
         </properties>
     </persistence-unit>
 </persistence>

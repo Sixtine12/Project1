@@ -5,12 +5,12 @@ import javax.inject.Named;
 import java.util.List;
 
 @Named
-public class PersonneCtrl {
+public class LicorneCtrl {
 
     @EJB
-    private PersonneDao dao;
+    private LicorneDao dao;
 
-    public List<Personne> tous(){
+    public List<Licorne> tous(){
         return dao.findAll();
     }
 }
