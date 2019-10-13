@@ -1,19 +1,28 @@
 package AutoGenerate;
 
+import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+import javax.inject.Named;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.servlet.http.HttpSession;
 import java.util.Objects;
 
 @Entity
+@Named
+@RequestScoped
 public class Utilisateur {
     private int idUtilisateur;
-    private byte vendeur;
+    private boolean vendeur;
     private int nom;
     private int prénom;
     private int telephone;
     private int adresse;
+    private String login;
+    private String mdp;
 
     @Id
     @Column(name = "IdUtilisateur")
@@ -23,16 +32,6 @@ public class Utilisateur {
 
     public void setIdUtilisateur(int idUtilisateur) {
         this.idUtilisateur = idUtilisateur;
-    }
-
-    @Basic
-    @Column(name = "Vendeur")
-    public byte getVendeur() {
-        return vendeur;
-    }
-
-    public void setVendeur(byte vendeur) {
-        this.vendeur = vendeur;
     }
 
     @Basic
@@ -75,6 +74,30 @@ public class Utilisateur {
         this.adresse = adresse;
     }
 
+    public boolean isVendeur() {
+        return vendeur;
+    }
+
+    public void setVendeur(boolean vendeur) {
+        this.vendeur = vendeur;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getMdp() {
+        return mdp;
+    }
+
+    public void setMdp(String mdp) {
+        this.mdp = mdp;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -87,6 +110,7 @@ public class Utilisateur {
                 telephone == that.telephone &&
                 adresse == that.adresse;
     }
+
 
     @Override
     public int hashCode() {

@@ -12,8 +12,7 @@ public class LicorneDao {
     public List<Licorne> findAll(){
         EntityManagerFactory f = Persistence.createEntityManagerFactory("NewPersistenceUnit");
         EntityManager em = f.createEntityManager();
-        Query requete = em.createQuery("select p from Licorne p");
-        System.out.println(requete.getResultList());
+        Query requete = em.createQuery("select p.idLicorne, p.nom from Licorne p");
         return requete.getResultList();
     }
 }
