@@ -6,6 +6,12 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:outputLabel value="Hello, world"/>
+    <h:outputLabel value="Bienvenue #{utilisateurCtrl.userCo.login} !"/>
+    <br/>
+    <h:outputLabel value="Téléphone #{utilisateurCtrl.userCo.telephone} !"/>
+    <h:dataTable value="#{licorneCtrl.proprioLicorne(utilisateurCtrl.userCo.idUtilisateur)}" var="lic">
+        <h:column> #{lic.nom} </h:column>
+        <h:column> <h:graphicImage value="#{lic.photo}"/></h:column>
+    </h:dataTable>
 </f:view>
 </html>
