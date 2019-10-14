@@ -1,11 +1,13 @@
 package AutoGenerate;
 
+import javax.inject.Named;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Objects;
 
+@Named
 @Entity
 public class Licorne {
     private int idLicorne;
@@ -16,6 +18,7 @@ public class Licorne {
     private int sexe;
     private int vendu;
     private String photo;
+    private int proprietaire;
 
     @Id
     @Column(name = "IdLicorne")
@@ -115,5 +118,13 @@ public class Licorne {
     @Override
     public int hashCode() {
         return Objects.hash(idLicorne, nom, race, robe, age, sexe, vendu, photo);
+    }
+
+    public int getProprietaire() {
+        return proprietaire;
+    }
+
+    public void setProprietaire(int proprietaire) {
+        this.proprietaire = proprietaire;
     }
 }

@@ -18,14 +18,14 @@
     <h:body>
         <h:form>
             Login
-            <h:inputText value="#{utilisateur.login}" />
+            <h:inputText value="#{utilisateurCtrl.userCo.login}" />
             <br/><br/>
             Mot de passe
-            <h:inputText value="#{utilisateur.mdp}" />
+            <h:inputSecret value="#{utilisateurCtrl.userCo.mdp}" />
             <br/><br/>
             <h:outputText value="#{utilisateurCtrl.pageNext}" />
             <br/><br/>
-            <h:commandButton value="Connexion" action="#{utilisateurCtrl.validate(utilisateur)}" />
+            <h:commandButton value="Connexion" action="#{utilisateurCtrl.validate()}" />
 
 
         </h:form>

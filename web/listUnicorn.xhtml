@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+        "http://www.w3.orw.w3.orgg/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://ww/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:outputLabel value="Bienvenue #{utilisateurCtrl.userCo.login} !"/>
+    <h:outputText value="Bienvenue #{utilisateurCtrl.userCo.login} !"/>
     <br/>
-    <h:outputLabel value="Téléphone #{utilisateurCtrl.userCo.telephone} !"/>
+    <h:outputText value="Téléphone #{utilisateurCtrl.userCo.telephone} !"/>
+    <br/>
+    <h:outputText value="#{utilisateurCtrl.isVendeur()}"/>
+    <br/>
+    <h2>
+        Liste de ses licornes
+    </h2>
+    <br/>
     <h:dataTable value="#{licorneCtrl.proprioLicorne(utilisateurCtrl.userCo.idUtilisateur)}" var="lic">
+        <h:column> <h:graphicImage value="#{lic.photo}" width="100"/></h:column>
         <h:column> #{lic.nom} </h:column>
-        <h:column> <h:graphicImage value="#{lic.photo}"/></h:column>
     </h:dataTable>
+    <br/>
+    <h:form>
+        <h:commandButton value="Déconnexion"  action="#{utilisateurCtrl.deconnexion()}" />
+    </h:form>
+    <br/>
+    <h:form rendered="#{utilisateurCtrl.userCo.vendeur}">
+        <h:commandButton value="Ajouter une licorne"  action="ajoutUnicorn" />
+    </h:form>
+
 </f:view>
 </html>

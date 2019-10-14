@@ -12,15 +12,13 @@ import javax.servlet.http.HttpSession;
 import java.util.Objects;
 
 @Entity
-@Named
-@RequestScoped
 public class Utilisateur {
     private int idUtilisateur;
     private boolean vendeur;
-    private int nom;
-    private int prénom;
+    private String nom;
+    private String prénom;
     private int telephone;
-    private int adresse;
+    private String adresse;
     private String login;
     private String mdp;
 
@@ -35,26 +33,6 @@ public class Utilisateur {
     }
 
     @Basic
-    @Column(name = "Nom")
-    public int getNom() {
-        return nom;
-    }
-
-    public void setNom(int nom) {
-        this.nom = nom;
-    }
-
-    @Basic
-    @Column(name = "Prénom")
-    public int getPrénom() {
-        return prénom;
-    }
-
-    public void setPrénom(int prénom) {
-        this.prénom = prénom;
-    }
-
-    @Basic
     @Column(name = "Telephone")
     public int getTelephone() {
         return telephone;
@@ -62,16 +40,6 @@ public class Utilisateur {
 
     public void setTelephone(int telephone) {
         this.telephone = telephone;
-    }
-
-    @Basic
-    @Column(name = "Adresse")
-    public int getAdresse() {
-        return adresse;
-    }
-
-    public void setAdresse(int adresse) {
-        this.adresse = adresse;
     }
 
     public boolean isVendeur() {
@@ -96,6 +64,30 @@ public class Utilisateur {
 
     public void setMdp(String mdp) {
         this.mdp = mdp;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrénom() {
+        return prénom;
+    }
+
+    public void setPrénom(String prénom) {
+        this.prénom = prénom;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
     }
 
     @Override
