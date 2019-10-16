@@ -16,7 +16,7 @@ public class LicorneDao {
     }
 
     public List<Licorne> proprioLicorne(int proprio){
-        Query requete2 = em.createQuery("select l from Licorne l where l.proprietaire = :proprio")
+        Query requete2 = em.createQuery("select l from Licorne l where l.proprietaire = :proprio and l.vendu=0")
                 .setParameter("proprio", proprio);
         return requete2.getResultList();
     }

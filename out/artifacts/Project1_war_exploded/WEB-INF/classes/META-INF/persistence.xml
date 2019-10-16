@@ -7,7 +7,12 @@
         <class>AutoGenerate.Licorne</class>
         <class>AutoGenerate.Transaction</class>
         <class>AutoGenerate.Utilisateur</class>
-<!--        <properties>-->
+        <class>AutoGenerate.Archive</class>
+        <properties>
+            <property name="eclipselink.jdbc.url" value="jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7307966"/>
+            <property name="eclipselink.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+        </properties>
+        <!--        <properties>-->
 <!--            <property name="eclipselink.jdbc.url" value="jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7307966"/>-->
 <!--            <property name="eclipselink.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>-->
 <!--            <property name="eclipselink.jdbc.user" value="sql7307966"/>-->

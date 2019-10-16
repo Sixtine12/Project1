@@ -60,6 +60,6 @@ public class UtilisateurCtrl implements Serializable {
     }
 
     public void vendu(Licorne lili){
-        daoUser.vente(lili);
+        daoUser.vente(lili, userCo);
     }
 }

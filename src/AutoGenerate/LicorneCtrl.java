@@ -20,7 +20,7 @@ public class LicorneCtrl implements Serializable {
 
     public List<Licorne> proprioLicorne(int proprio){
         List<Licorne> test = dao.proprioLicorne(proprio);
-        System.out.println(test.get(0).getNom());
+        //System.out.println(test.get(0).getNom());
         return test;
     }
 
