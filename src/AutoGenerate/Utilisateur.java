@@ -4,14 +4,18 @@ import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.servlet.http.HttpSession;
 import java.util.Objects;
 
 @Entity
+//@Table(name="Utilisateur")
+//On peut mettre ici des NamedQueries
+//@NamedQueries(
+//        @NamedQuery(name="Utilisateur.findAll",value="select u from Utilisateur u")
+//)
+//Récuperer par createdNamedQuery où on indique la classe d'où vient la NamedQuery
+
 public class Utilisateur {
     private int idUtilisateur;
     private boolean vendeur;
@@ -50,6 +54,8 @@ public class Utilisateur {
         this.vendeur = vendeur;
     }
 
+    @Basic
+    @Column(name = "Login")
     public String getLogin() {
         return login;
     }
@@ -58,6 +64,8 @@ public class Utilisateur {
         this.login = login;
     }
 
+    @Basic
+    @Column(name = "Mdp")
     public String getMdp() {
         return mdp;
     }
@@ -66,6 +74,8 @@ public class Utilisateur {
         this.mdp = mdp;
     }
 
+    @Basic
+    @Column(name = "Nom")
     public String getNom() {
         return nom;
     }
@@ -74,6 +84,8 @@ public class Utilisateur {
         this.nom = nom;
     }
 
+    @Basic
+    @Column(name = "Prénom")
     public String getPrénom() {
         return prénom;
     }
@@ -82,6 +94,8 @@ public class Utilisateur {
         this.prénom = prénom;
     }
 
+    @Basic
+    @Column(name = "Adresse")
     public String getAdresse() {
         return adresse;
     }

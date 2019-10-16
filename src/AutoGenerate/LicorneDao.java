@@ -1,26 +1,27 @@
 package AutoGenerate;
 
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
+import javax.persistence.*;
 import java.util.List;
 
 @Stateless
 public class LicorneDao {
+
+    @PersistenceContext(unitName = "NewPersistenceUnit")
+    private EntityManager em;
+
     public List<Licorne> findAll(){
-        EntityManagerFactory f = Persistence.createEntityManagerFactory("NewPersistenceUnit");
-        EntityManager em = f.createEntityManager();
-        Query requete = em.createQuery("select p.idLicorne, p.nom from Licorne p");
+        Query requete = em.createQuery("select p from Licorne p where p.vendu= 0");
         return requete.getResultList();
     }
 
     public List<Licorne> proprioLicorne(int proprio){
-        EntityManagerFactory f = Persistence.createEntityManagerFactory("NewPersistenceUnit");
-        EntityManager em = f.createEntityManager();
         Query requete2 = em.createQuery("select l from Licorne l where l.proprietaire = :proprio")
                 .setParameter("proprio", proprio);
         return requete2.getResultList();
     }
+    public void add(Licorne lili){
+        em.persist(lili);
+    }
+
 }

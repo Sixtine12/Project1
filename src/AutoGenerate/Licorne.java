@@ -120,6 +120,8 @@ public class Licorne {
         return Objects.hash(idLicorne, nom, race, robe, age, sexe, vendu, photo);
     }
 
+    @Basic
+    @Column(name = "Proprietaire")
     public int getProprietaire() {
         return proprietaire;
     }

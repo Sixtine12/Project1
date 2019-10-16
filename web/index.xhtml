@@ -5,10 +5,30 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-   <f:view>
-      <h:outputLabel value="Hello, world"/>
-      <h:dataTable value="#{licorneCtrl.tous()}" var="ligne">
-         <h:column> #{ligne[0]} #{ligne[1]}</h:column>
-      </h:dataTable>
-   </f:view>
+<f:view>
+    <h:head>
+        <title>login</title>
+    </h:head>
+    <h:head>
+        <h2>
+            <h:outputLabel value="Page de connexion"/>
+        </h2>
+    </h:head>
+    <br/>
+    <h:body>
+        <h:form>
+            Login
+            <h:inputText value="#{utilisateurCtrl.userCo.login}" />
+            <br/><br/>
+            Mot de passe
+            <h:inputSecret value="#{utilisateurCtrl.userCo.mdp}" />
+            <br/><br/>
+            <h:outputText value="#{utilisateurCtrl.pageNext}" />
+            <br/><br/>
+            <h:commandButton value="Connexion" action="#{utilisateurCtrl.validate()}" />
+
+
+        </h:form>
+    </h:body>
+</f:view>
 </html>

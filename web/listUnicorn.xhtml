@@ -6,11 +6,12 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
+
     <h:outputText value="Bienvenue #{utilisateurCtrl.userCo.login} !"/>
     <br/>
     <h:outputText value="Téléphone #{utilisateurCtrl.userCo.telephone} !"/>
     <br/>
-    <h:outputText value="#{utilisateurCtrl.isVendeur()}"/>
+<!--    <h:outputText value="#{utilisateurCtrl.isVendeur()}"/>-->
     <br/>
     <h2>
         Liste de ses licornes
@@ -19,14 +20,21 @@
     <h:dataTable value="#{licorneCtrl.proprioLicorne(utilisateurCtrl.userCo.idUtilisateur)}" var="lic">
         <h:column> <h:graphicImage value="#{lic.photo}" width="100"/></h:column>
         <h:column> #{lic.nom} </h:column>
+        <h:column>
+            <h:form>
+                <h:commandButton rendered="#{utilisateurCtrl.userCo.vendeur}" value="Il était une fois ... une licorne vendue"  action="#{utilisateurCtrl.vendu(lic)}" />
+            </h:form>
+        </h:column>
+
     </h:dataTable>
     <br/>
     <h:form>
         <h:commandButton value="Déconnexion"  action="#{utilisateurCtrl.deconnexion()}" />
     </h:form>
     <br/>
-    <h:form rendered="#{utilisateurCtrl.userCo.vendeur}">
-        <h:commandButton value="Ajouter une licorne"  action="ajoutUnicorn" />
+    <h:form >
+        <h:commandButton rendered="#{utilisateurCtrl.userCo.vendeur}" value="Ajouter une licorne"  action="ajoutUnicorn" />
+        <h:commandButton rendered="#{!utilisateurCtrl.userCo.vendeur}" value="Obtenir une licorne"  action="listAllUnicorn" />
     </h:form>
 
 </f:view>

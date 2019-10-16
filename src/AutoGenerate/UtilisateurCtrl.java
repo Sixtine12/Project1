@@ -47,7 +47,7 @@ public class UtilisateurCtrl implements Serializable {
     public String deconnexion(){
         this.userCo= new Utilisateur();
         pageNext = "Vous êtes bien déconnecté";
-        return "login";
+        return "index";
     }
 
     public String isVendeur(){
@@ -57,5 +57,9 @@ public class UtilisateurCtrl implements Serializable {
         else{
             return "Acheteur session";
         }
+    }
+
+    public void vendu(Licorne lili){
+        daoUser.vente(lili);
     }
 }

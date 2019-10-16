@@ -31,5 +31,18 @@ public class LicorneCtrl implements Serializable {
     public void setLili(Licorne lili) {
         this.lili = lili;
     }
+
+    public String ajout(Utilisateur userCo){
+        lili.setVendu(0);
+        lili.setPhoto("resources/images/charlie.jpg");
+        lili.setProprietaire(userCo.getIdUtilisateur());
+        dao.add(lili);
+        return "listUnicorn";
+    }
+
+    public String info(Licorne liSelect){
+        lili = liSelect;
+        return "infoLicorne";
+    }
 }
 
