@@ -4,38 +4,53 @@
 <html xmlns="http://ww/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://ww/1999/xhtml ">
+<h:head>
+    <link rel="stylesheet" href="CSS.css"/>
+</h:head>
+<h:body>
+    <f:view>
+        <h:outputText value="Bienvenue #{utilisateurCtrl.userCo.login} !"/>
+        <h2>Voici vos informations :</h2>
+        <br/>
+        <h:outputText value="Nom : #{utilisateurCtrl.userCo.nom} "/>
+        <br/>
+        <h:outputText value="Prénom : #{utilisateurCtrl.userCo.prénom} "/>
+        <br/>
+        <h:outputText value="Adresse : #{utilisateurCtrl.userCo.adresse} "/>
+        <br/>
+        <h:outputText value="Téléphone : #{utilisateurCtrl.userCo.telephone} "/>
+        <br/>
+        <!--    <h:outputText value="#{utilisateurCtrl.isVendeur()}"/>-->
+        <br/>
+        <h3>
+            Voici la liste de vos licornes :
+        </h3>
+        <br/>
+        <h:dataTable value="#{licorneCtrl.proprioLicorne(utilisateurCtrl.userCo.idUtilisateur)}" var="lic">
+            <h:column> <h:graphicImage value="#{lic.photo}" width="100"/></h:column>
+            <h:column> #{lic.nom} </h:column>
+            <h:column>
+                <h:form>
+                    <h:commandButton class="button" rendered="#{utilisateurCtrl.userCo.vendeur}"
+                                     value="Il était une fois ... une licorne vendue"
+                                     action="#{utilisateurCtrl.vendu(lic)}"/>
+                </h:form>
+            </h:column>
 
-    <h:outputText value="Bienvenue #{utilisateurCtrl.userCo.login} !"/>
-    <br/>
-    <h:outputText value="Téléphone #{utilisateurCtrl.userCo.telephone} !"/>
-    <br/>
-<!--    <h:outputText value="#{utilisateurCtrl.isVendeur()}"/>-->
-    <br/>
-    <h2>
-        Liste de ses licornes
-    </h2>
-    <br/>
-    <h:dataTable value="#{licorneCtrl.proprioLicorne(utilisateurCtrl.userCo.idUtilisateur)}" var="lic">
-        <h:column> <h:graphicImage value="#{lic.photo}" width="100"/></h:column>
-        <h:column> #{lic.nom} </h:column>
-        <h:column>
-            <h:form>
-                <h:commandButton rendered="#{utilisateurCtrl.userCo.vendeur}" value="Il était une fois ... une licorne vendue"  action="#{utilisateurCtrl.vendu(lic)}" />
-            </h:form>
-        </h:column>
-
-    </h:dataTable>
-    <br/>
-    <h:form>
-        <h:commandButton value="Déconnexion"  action="#{utilisateurCtrl.deconnexion()}" />
-    </h:form>
-    <br/>
-    <h:form >
-        <h:commandButton rendered="#{utilisateurCtrl.userCo.vendeur}" value="Ajouter une licorne"  action="ajoutUnicorn" />
-        <h:commandButton rendered="#{!utilisateurCtrl.userCo.vendeur}" value="Obtenir une licorne"  action="listAllUnicorn" />
-    </h:form>
-
-</f:view>
+        </h:dataTable>
+        <br/>
+        <h:form>
+            <h:commandButton class="button" value="Quitter le pays des licornes" action="#{utilisateurCtrl.deconnexion()}"/>
+        </h:form>
+        <br/>
+        <h:form>
+            <h:commandButton class="button" rendered="#{utilisateurCtrl.userCo.vendeur}" value="Mettre une licorne en vente"
+                             action="ajoutUnicorn"/>
+            <h:commandButton class="button" rendered="#{!utilisateurCtrl.userCo.vendeur}" value="Je veux voir les licornes en vente !"
+                             action="listAllUnicorn"/>
+        </h:form>
+    </f:view>
+</h:body>
 </html>

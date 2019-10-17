@@ -5,25 +5,27 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+   <link rel="stylesheet" href="CSS.css"/>
+</h:head>
+<h:body>
    <f:view>
       <h1>
          <h:outputLabel value="Licornes disponibles"/>
       </h1>
-
       <h:dataTable value="#{licorneCtrl.tous()}" var="ligne">
          <h:column> <h:graphicImage value="#{ligne.photo}" width="100"/></h:column>
-         <h:column> #{ligne.nom} </h:column>
-         <h:column> #{ligne.race} </h:column>
-         <h:column> #{ligne.robe} </h:column>
+          <h:column> Cette belle licorne s'appelle #{ligne.nom} </h:column>
          <h:column>
             <h:form>
-               <h:commandButton value="Sélectionner"  action="#{licorneCtrl.info(ligne)}"/>
+               <h:commandButton class="button" value="Je veux en savoir plus !"  action="#{licorneCtrl.info(ligne)}"/>
             </h:form>
          </h:column>
       </h:dataTable>
       <br/>
       <h:form>
-         <h:commandButton value="Retour"  action="listUnicorn" />
+         <h:commandButton class="button" value="Retour"  action="listUnicorn" />
       </h:form>
    </f:view>
+</h:body>
 </html>

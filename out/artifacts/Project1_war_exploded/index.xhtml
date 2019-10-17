@@ -10,6 +10,7 @@
         <title>login</title>
     </h:head>
     <h:head>
+        <link rel="stylesheet" href="CSS.css"/>
         <h2>
             <h:outputLabel value="Page de connexion"/>
         </h2>
@@ -25,9 +26,7 @@
             <br/><br/>
             <h:outputText value="#{utilisateurCtrl.pageNext}" />
             <br/><br/>
-            <h:commandButton value="Connexion" action="#{utilisateurCtrl.validate()}" />
-
-
+            <h:commandButton class="button" value="Connexion" action="#{utilisateurCtrl.validate()}" />
         </h:form>
     </h:body>
 </f:view>

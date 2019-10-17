@@ -21,7 +21,9 @@ public class LicorneDao {
         return requete2.getResultList();
     }
     public void add(Licorne lili){
+//        em.getTransaction().begin();
         em.persist(lili);
+//        em.getTransaction().commit();
     }
 
 }

@@ -5,28 +5,33 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:form>
-        <h:outputLabel for="nomLi" value="Nom de la licorne :"/>
-        <h:inputText id="nomLi" value="#{licorneCtrl.lili.nom}"/>
-        <br/>
-        <h:outputLabel for="raceLi" value="Race de la licorne :"/>
-        <h:inputText id="raceLi" value="#{licorneCtrl.lili.race}"/>
-        <br/>
-        <h:outputLabel for="robeLi" value="Robe de la licorne :"/>
-        <h:inputText id="robeLi" value="#{licorneCtrl.lili.robe}"/>
-        <br/>
-        <h:outputLabel for="ageLi" value="Age de la licorne :"/>
-        <h:inputText id="ageLi" value="#{licorneCtrl.lili.age}"/>
-        <br/>
-        <h:outputLabel for="sexeLi" value="Sexe de la licorne :"/>
-        <h:selectOneRadio id="sexeLi" value="#{licorneCtrl.lili.sexe}">
-            <f:selectItem itemValue="1" itemLabel="Femelle"/>
-            <f:selectItem itemValue="0" itemLabel="Mâle"/>
-        </h:selectOneRadio>
+<h:head>
+    <link rel="stylesheet" href="CSS.css"/>
+</h:head>
+<h:body>
+    <f:view>
+        <h:form>
+            <h:outputLabel for="nomLi" value="Nom de la licorne :"/>
+            <h:inputText id="nomLi" value="#{licorneCtrl.lili.nom}"/>
+            <br/>
+            <h:outputLabel for="raceLi" value="Race de la licorne :"/>
+            <h:inputText id="raceLi" value="#{licorneCtrl.lili.race}"/>
+            <br/>
+            <h:outputLabel for="robeLi" value="Robe de la licorne :"/>
+            <h:inputText id="robeLi" value="#{licorneCtrl.lili.robe}"/>
+            <br/>
+            <h:outputLabel for="ageLi" value="Age de la licorne :"/>
+            <h:inputText id="ageLi" value="#{licorneCtrl.lili.age}"/>
+            <br/>
+            <h:outputLabel for="sexeLi" value="Sexe de la licorne :"/>
+            <h:selectOneRadio id="sexeLi" value="#{licorneCtrl.lili.sexe}">
+                <f:selectItem itemValue="1" itemLabel="Femelle"/>
+                <f:selectItem itemValue="0" itemLabel="Mâle"/>
+            </h:selectOneRadio>
 
-        <br/>
-        <h:commandButton value="Ajout"  action="#{licorneCtrl.ajout(utilisateurCtrl.userCo)}" />
-    </h:form>
-</f:view>
+            <br/>
+            <h:commandButton class="button" value="Ajout"  action="#{licorneCtrl.ajout(utilisateurCtrl.userCo)}" />
+        </h:form>
+    </f:view>
+</h:body>
 </html>

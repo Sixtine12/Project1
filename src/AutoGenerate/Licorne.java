@@ -1,10 +1,7 @@
 package AutoGenerate;
 
 import javax.inject.Named;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 
@@ -21,6 +18,7 @@ public class Licorne {
     private int proprietaire;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "IdLicorne")
     public int getIdLicorne() {
         return idLicorne;
