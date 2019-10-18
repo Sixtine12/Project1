@@ -1,0 +1,21 @@
+body {
+    background: url("wallpaper.jpg");
+    text-align: center;
+}
+
+.button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+}
+
+.button {
+    background-color: #008CBA;
+    color: white;
+}
+
+h2{
+    background-color: white;
+    color: #008CBA;
+    border-radius:5px;
+}
