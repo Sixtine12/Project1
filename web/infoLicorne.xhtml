@@ -10,25 +10,24 @@
 </h:head>
 <h:body>
     <f:view>
-       <!-- <h:dataTable value="#{licorneCtrl.lili}">-->
-            <h:column> Le nom de cette belle licorne : #{licorneCtrl.lili.nom} </h:column>
-            <br/>
-            <h:column> La race de cette belle licorne : #{licorneCtrl.lili.race} </h:column>
-            <br/>
-            <h:column> Le genre de cette belle licorne : #{licorneCtrl.lili.sexe} </h:column>
-            <br/>
-            <h:column> L'identifiant du propriétaire de cette belle licorne : #{licorneCtrl.lili.proprietaire} </h:column> <!-- afficher le nom et prénom du proprio au lieu de son id -->
-            <br/>
-            <h:column> La photo de cette belle licorne :
-             <br/>
-             <h:graphicImage value="#{licorneCtrl.lili.photo}" width="100"/></h:column>
-
-        <!--</h:dataTable>-->
-
+        <br/>
+        <h:column> Le nom de cette belle licorne : #{licorneCtrl.lili.nom} </h:column>
+        <br/>
+        <h:column> La race de cette belle licorne : #{licorneCtrl.lili.race} </h:column>
+        <br/>
+        <h:column> Le genre de cette belle licorne : #{licorneCtrl.lili.sexe} </h:column>
+        <br/><br/>
+        <h:column> Le nom du propriétaire de cette belle licorne : #{licorneCtrl.findUserName(licorneCtrl.lili.proprietaire)} </h:column> <!-- afficher le nom et prénom du proprio au lieu de son id -->
+        <br/>
+        <h:column> Le numéro de téléphone du propriétaire : #{licorneCtrl.findUserPhone(licorneCtrl.lili.proprietaire)}</h:column>
+        <br/><br/>
+        <h:column> La photo de cette belle licorne : </h:column>
+        <br/>
+        <h:graphicImage value="#{licorneCtrl.lili.photo}" width="100"/>
+        <br/>
         <h:form>
             <h:commandButton class="button" value="Retour"  action="listAllUnicorn" />
         </h:form>
-
     </f:view>
 </h:body>
 </html>

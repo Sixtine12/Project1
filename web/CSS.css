@@ -1,21 +1,31 @@
 body {
     background: url("wallpaper.jpg");
+    font-family: "Comic Sans MS", sans-serif;
+}
+#Co{
     text-align: center;
 }
-
 .button:hover {
     background-color: white;
-    color: black;
+    color: #008CBA;
     border: 2px solid #008CBA;
+    border-radius:20px;
 }
-
 .button {
     background-color: #008CBA;
     color: white;
+    border-radius:20px;
 }
-
-h2{
+#connection {
+    background-color: #008CBA;
+    color: white;
+    border-radius:20px;
+}
+#PageCo{
     background-color: white;
     color: #008CBA;
     border-radius:5px;
+    width:150px;
+    height:90px;
+    margin-left:660px;
 }

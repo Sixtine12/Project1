@@ -26,4 +26,10 @@ public class LicorneDao {
 //        em.getTransaction().commit();
     }
 
+    public Utilisateur findUser(int idUser){
+        Query requete = em.createQuery("select l from Utilisateur l where l.idUtilisateur = :idUser")
+                .setParameter("idUser", idUser);
+        return (Utilisateur) requete.getSingleResult();
+    }
+
 }

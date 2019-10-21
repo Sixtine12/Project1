@@ -11,23 +11,29 @@
     </h:head>
     <h:head>
         <link rel="stylesheet" href="CSS.css"/>
-        <h2>
-            <h:outputLabel value="Page de connexion"/>
-        </h2>
     </h:head>
     <br/>
     <h:body>
-        <h:form>
-            Login
-            <h:inputText value="#{utilisateurCtrl.userCo.login}" />
-            <br/><br/>
-            Mot de passe
-            <h:inputSecret value="#{utilisateurCtrl.userCo.mdp}" />
-            <br/><br/>
-            <h:outputText value="#{utilisateurCtrl.pageNext}" />
-            <br/><br/>
-            <h:commandButton class="button" value="Connexion" action="#{utilisateurCtrl.validate()}" />
-        </h:form>
+        <h:panelGroup layout="block" id="Co">
+            <h:panelGroup layout="block" id="PageCo">
+                <h2>
+                    <h:outputLabel value="Page de connexion"/>
+                </h2>
+            </h:panelGroup>
+            <h:form>
+                <br/>
+                <br/>
+                Login
+                <h:inputText value="#{utilisateurCtrl.userCo.login}" />
+                <br/><br/>
+                Mot de passe
+                <h:inputSecret value="#{utilisateurCtrl.userCo.mdp}" />
+                <br/><br/>
+                <h:outputText value="#{utilisateurCtrl.pageNext}" />
+                <br/><br/>
+                <h:commandButton id="connection" class="button" value="Connexion" action="#{utilisateurCtrl.validate()}" />
+            </h:form>
+        </h:panelGroup>
     </h:body>
 </f:view>
 </html>

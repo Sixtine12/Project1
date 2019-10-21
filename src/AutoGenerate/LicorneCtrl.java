@@ -40,6 +40,18 @@ public class LicorneCtrl implements Serializable {
         return "listUnicorn";
     }
 
+    public String findUserName(int idUser){
+        Utilisateur theUser = new Utilisateur();
+       theUser = dao.findUser(idUser);
+       return theUser.getNom();
+    }
+
+    public int findUserPhone(int idUser){
+        Utilisateur theUser = new Utilisateur();
+        theUser = dao.findUser(idUser);
+        return theUser.getTelephone();
+    }
+
     public String info(Licorne liSelect){
         lili = liSelect;
         return "infoLicorne";
